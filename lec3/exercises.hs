@@ -1,0 +1,24 @@
+-- Problem 1.
+-- What is the type of:
+-- twice f x = f (f (x))
+--
+-- Type: (a->a) -> a -> a
+--
+-- Is it adhoc or parametric polymorphic or none?
+-- the function twice is paramtric polymorphic, meaning that the typing is very free. There is no limitations. E.g. it doesnt HAVE to be a number or a string etc.
+--
+-- What about twicetwo (f,x) = f(f (x))
+-- Type: ((a->a), a) -> a
+-- It is also parametric polymorphic.
+
+-- Problem 2.
+-- (λx.xx)(λx.xx)
+-- Also written as: (\x -> x x)(\x -> x x)
+-- Are the bound variables in the term distinct? If they are not, rename them such that they are.
+-- Once you have found the answer to this, then find a reduction step that the term can take. To do this, use the reduction rules of the note.
+-- Through alpha conversion we get:
+-- (\x -> x x)(\y -> y y)
+-- We could technically do beta-reduction. but that would move us back to square one:
+-- (\y -> y y)(\y -> y y)
+-- This is the Omega Combinator function. It is never terminating (it recursively calls itself)
+--
